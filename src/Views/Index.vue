@@ -7,19 +7,27 @@
             <img border="0" 
             src="http://www.warlog.ru/counter/?i=246" alt="счетчик посещений" title="счетчик посещений" /></a>
         </div>
-        <div class="list">
-            <ul>
-                
-            </ul>
-        </div>
+        <ul>
+            <li v-for="title in titles">
+              {{ title.text }}
+            </li>
+          </ul>
     </div>
 </template>
 
 <script>
 import Nav from '../components/Nav.vue';
-// import { useListStore } from '../store/list'
+import AddTitle from './AddTitle.vue';
+import { useListStore } from '../store/list.js'
 // import { useAddStore } from '../store/addtitle'
 export default {
+    setup() {
+        const list = useListStore()
+
+        list.titles++
+        list.$patch({titles: list.titles + 1})
+        list.increment()
+    },
     name: 'Index',
     data() {
         return{
@@ -31,15 +39,7 @@ export default {
     }
 
 }
-// const listStore = useListStore();
-// const addStore = addStore();
-// const props = defineProps({
-//     list: {
-//         type: Object,
-//         required: true,
-//         default: () => {},
-//     }
-// })
+
 </script>
 <style>
 .counter{

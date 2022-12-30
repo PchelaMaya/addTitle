@@ -1,6 +1,7 @@
 <script setup>
 
 import Nav from '../components/Nav.vue';
+import Index from './Index.vue';
 
 import { ref } from 'vue'
 // import { useAddStore } from '../store/addtitle'
