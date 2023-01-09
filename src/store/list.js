@@ -1,29 +1,13 @@
-import { ref } from 'vue'
+
 import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
-export const useListStore = defineStore("listStore", () => {
-    const titles = ref([]);
+export const useCountVisit = defineStore('visits', () => {
+    const visits = ref(1)
+
     function increment() {
-        titles.value++
+        visits.value++
     }
-    return {
-        titles,
-        increment
-    }
-}) 
 
-// import { defineStore } from 'pinia'
-
-// export const useListStore = defineStore('list', {
-//   state: () => ({
-//     /** @type {{ text: string }[]} */
-//     list: [],
-//   }),
-//   actions: {
-//     // any amount of arguments, return a promise or not
-//     addlist(text) {
-//       // you can directly mutate the state
-//       this.list.push({ text })
-//     },
-//   },
-// })
+    return { visits, increment }
+})

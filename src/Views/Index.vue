@@ -1,47 +1,29 @@
 <template>
-    <div class="main">
-        <div v-if="projects.length"></div>
-        <div class="counter">
-            <h1 class="title_counter">Просмотры:</h1>
-            <a href="http://www.warlog.ru/" target="_blank">
-            <img border="0" 
-            src="http://www.warlog.ru/counter/?i=246" alt="счетчик посещений" title="счетчик посещений" /></a>
-        </div>
+
+    <div class="counter">
+        <h1 class="title_counter">Список задач</h1>
         <ul>
-            <li v-for="title in titles">
-              {{ title.text }}
-            </li>
-          </ul>
+            <li class="list__title">{{ title }}</li>
+        </ul>
+        <h1 class="title_counter">Просмотры: {{ countVisiting }}</h1>
     </div>
 </template>
 
-<script>
-import Nav from '../components/Nav.vue';
-import AddTitle from './AddTitle.vue';
-import { useListStore } from '../store/list.js'
-// import { useAddStore } from '../store/addtitle'
-export default {
-    setup() {
-        const list = useListStore()
+<script setup>
+    import { ref, onMounted } from 'vue'
+    import { useTitleStore } from './../store/addtitle'
+    import { useCountVisit } from './../store/list'
 
-        list.titles++
-        list.$patch({titles: list.titles + 1})
-        list.increment()
-    },
-    name: 'Index',
-    data() {
-        return{
-            projects: [],
-            current: 'all'
-        }
-    },
-    computed: {
-    }
+    const title = useTitleStore().title
+    const visits = useCountVisit()
+    const countVisiting = ref(visits.visits)
 
-}
+    onMounted(() => visits.increment())
+
 
 </script>
-<style>
+<style scoped>
+
 .counter{
     margin: 20px auto;
     padding-bottom: 5px;
@@ -51,8 +33,5 @@ export default {
     color: #999;
     font-size: 18px;
   }
-.counter img {
-    height: 14px;
-    width: 100px;
-}
+
 </style>

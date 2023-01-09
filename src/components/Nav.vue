@@ -1,23 +1,33 @@
-<script>
-export default {}
-
-
-</script>
 
 <template>
-  <nav class="main-nav">
-    <router-link :to="{name: 'Index'}">Все задачи</router-link>
-    <router-link :to="{name: 'AddTitle'}">Добавить задачу</router-link>
-</nav>
-  
+  <header class="header">
+    <div class="container">
+
+      <nav class="header-nav">
+        <router-link :to="{name: 'Index'}" class="navbar__link">Все задачи</router-link>
+        <router-link :to="{name: 'AddTitle'}" class="navbar__link">Добавить задачу</router-link>
+      </nav>
+    </div>
+  </header>
 </template>
 
-<style>
-.main-nav {
+<style scoped>
+.header {
+  height: 70px;
+  box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+
+}
+.container {
+  margin: 0 auto;
+  width: 900px;
+  height: 100%;
+  display: flex;
+}
+.header-nav {
   text-align: center;
   margin: 40px auto;
 }
-.main-nav a {
+.header-nav a {
   display: inline-block;
   text-decoration: none;
   margin: 0 10px;

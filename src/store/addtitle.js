@@ -1,14 +1,13 @@
-// import { ref } from 'vue'
-// import { defineStore } from 'pinia'
-// import { useListStore } from './list'
 
-// export const useAddStore = defineStore({
-//     id: 'list',
-//     state: () => ({
-//     list: ref([])
-//     }),
-//     actions: {
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
-//     }
-//     const getList = async ()
-// // })
+export const useTitleStore = defineStore('titles', () => {
+    const title = ref('Задача 1')
+
+    function change(newTitle) {
+        title.value = newTitle
+    }
+
+    return { title, change }
+})

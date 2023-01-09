@@ -1,8 +1,6 @@
 <script setup>
 import Nav from './components/Nav.vue'
 
-// import { useListStore} from "./store/list.js"
-// const list = useListStore();
 </script>
 
 <template>
