@@ -14,8 +14,7 @@ function onInput(e) {
 
         <div class="form">
           <h1 class="form__title">Введите название</h1>
-          <input class="form__input-div" v-model="storeTitle.title" placeholder="Задача 2"/>
-          
+          <input class="form__input-div" v-model="storeTitle.title"/>
           <button>Сохранить</button>
       </div>
 </template>
