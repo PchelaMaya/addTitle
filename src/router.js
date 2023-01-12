@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
-import Index from './Views/Index.vue'
-import AddTitle from './Views/AddTitle.vue'
-import NotFound from './Views/NotFound.vue'
+import Index from '@/components/Main/Index.vue'
+import AddTitle from '@/components/AddTitle/AddTitle.vue'
+import NotFound from '@/components/NotFound.vue'
 
 const router = createRouter({
     history: createWebHistory(),

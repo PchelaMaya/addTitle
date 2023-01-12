@@ -1,25 +1,3 @@
-<script setup>
-
-import { useTitleStore } from './../store/addtitle'
-
-const storeTitle = useTitleStore()
-
-function onInput(e) {
-    storeTitle.change(e.target.innerText)
-}
-
-</script>
-
-<template>
-
-        <div class="form">
-          <h1 class="form__title">Введите название</h1>
-          <div class="form__input-div" @keyup="onInput" contenteditable="true">{{ storeTitle.title }}</div>
-          <button>Сохранить</button>
-      </div>
-</template>
-
-<style scoped>
 
 .form {
     background: #2f4765;
@@ -62,4 +40,3 @@ function onInput(e) {
     background-color: #35df90 !important;
     transition: color 0.2s ease-in;
 }
-</style>

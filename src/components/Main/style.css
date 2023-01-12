@@ -1,0 +1,10 @@
+
+.counter{
+    margin: 20px auto;
+    padding-bottom: 5px;
+  }
+.counter h1 {
+    text-decoration: none;
+    color: #999;
+    font-size: 18px;
+  }

@@ -11,9 +11,9 @@
 
 <script setup>
     import { ref, onMounted } from 'vue'
-    import { useTitleStore } from './../store/addtitle'
-    import { useCountVisit } from './../store/list'
-
+    import { useTitleStore } from '@/store/addtitle'
+    import { useCountVisit } from '@/store/list'
+    import './style.css'
     const title = useTitleStore().title
     const visits = useCountVisit()
     const countVisiting = ref(visits.visits)
@@ -23,15 +23,5 @@
 
 </script>
 <style scoped>
-
-.counter{
-    margin: 20px auto;
-    padding-bottom: 5px;
-  }
-.counter h1 {
-    text-decoration: none;
-    color: #999;
-    font-size: 18px;
-  }
 
 </style>
