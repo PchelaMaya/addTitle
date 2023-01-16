@@ -1,24 +1,25 @@
 <script setup>
-
+import { ref } from 'vue'
 import { useTitleStore } from '@/store/addtitle'
 import './style.css'
+
 const storeTitle = useTitleStore()
 
+const title = ref('')
+
 function onInput(e) {
-    storeTitle.change(e.target.innerText)
+    storeTitle.change(e.target.innerText);
 }
 
 </script>
 
 <template>
-
-        <div class="form">
-          <h1 class="form__title">Введите название</h1>
-          <input class="form__input-div" v-model="storeTitle.title"/>
-          <button>Сохранить</button>
+      <form class="form" @submit.prevent="storeTitle.change(title)">
+      <div>
+        <label for="title" class="form__title">Введите название</label>
+        <input class="form__input-div" type="text" id="title" placeholder="Задача 1" v-model="title">
       </div>
-</template>
+      <button type="submit">Добавить</button>
+    </form>
+    </template>
 
-<style scoped>
-
-</style>

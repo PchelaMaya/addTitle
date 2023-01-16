@@ -1,13 +1,12 @@
-
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
 
-export const useTitleStore = defineStore('titles', () => {
-    const title = ref('Задача 1')
-
-    function change(newTitle) {
-        title.value = newTitle
+export const useTitleStore = defineStore('titles',  {
+    state: () => ({
+        titles: ''
+    }),
+    actions: {
+        change(newTitle) {
+            this.title = newTitle;
+        }
     }
-
-    return { title, change }
 })
