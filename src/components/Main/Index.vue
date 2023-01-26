@@ -1,13 +1,3 @@
-<template>
-    <div class="counter">
-        <h1 class="title_counter">Список задач</h1>
-        <ul>
-            <li class="list__title">{{ title }}</li>
-        </ul>
-        <h1 class="title_counter">Просмотры: {{ countVisiting }}</h1>
-    </div>
-</template>
-
 <script setup>
     import { ref, onMounted } from 'vue'
     import { useTitleStore } from '@/store/addtitle'
@@ -22,6 +12,13 @@
 
 
 </script>
-<style scoped>
+<template>
+    <div class="counter">
+        <h1 class="title_counter">Список задач</h1>
+        <ul>
+            <li class="list__title">{{ title }}</li>
+        </ul>
+        <h1 class="title_counter">Просмотры: {{ countVisiting }}</h1>
+    </div>
+</template>
 
-</style>

@@ -8,7 +8,3 @@ import Nav from '@/components/Nav/Nav.vue'
     <router-view />
   </div>
 </template>
-
-<style scoped>
-
-</style>

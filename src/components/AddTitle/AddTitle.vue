@@ -7,19 +7,15 @@ const storeTitle = useTitleStore()
 
 const title = ref('')
 
-function onInput(e) {
-    storeTitle.change(e.target.innerText);
-}
-
 </script>
 
 <template>
-      <form class="form" @submit.prevent="storeTitle.change(title)">
-      <div>
-        <label for="title" class="form__title">Введите название</label>
-        <input class="form__input-div" type="text" id="title" placeholder="Задача 1" v-model="title">
-      </div>
-      <button type="submit">Добавить</button>
-    </form>
-    </template>
+  <form class="form" @submit.prevent="storeTitle.change(title)">
+    <div>
+      <label for="title" class="form__title">Введите название</label>
+      <input class="form__input-div" type="text" id="title" placeholder="Задача 1" v-model="title">
+    </div>
+    <button type="submit">Добавить</button>
+  </form>
+</template>
 

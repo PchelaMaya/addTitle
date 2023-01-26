@@ -4,7 +4,7 @@
     padding: 20px;
     border-radius: 10px;
   }
-  .form__title {
+.form__title {
     display: block;
     color: #bbb;
     text-transform: uppercase;
@@ -13,7 +13,7 @@
     letter-spacing: 1px;
     margin: 20px 0 10px 0;
   }
-  .form__input-div {
+.form__input-div {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     padding: 10px;
@@ -25,7 +25,7 @@
     color: #bbb;
   }
 
-  button {
+button {
     display: block;
     margin: 20px auto 0;
     background-color:#776e6a ;
@@ -36,7 +36,7 @@
     border-radius: 7px;
     font-size: 16px;
   }
-  button:hover {
+button:hover {
     background-color: #35df90 !important;
     transition: color 0.2s ease-in;
-}
+  }
